@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/operations';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { nanoid } from 'nanoid';
 import Notiflix from 'notiflix';
 import css from './ContactForm.module.css';
-import { getContacts } from '../../redux/selectors';
+import { selectContacts } from '../../redux/selectors';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
 
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem('contacts', JSON.stringify(contacts));
+  // }, [contacts]);
 
   const handleSumbit = event => {
     event.preventDefault();
